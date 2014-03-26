@@ -12,13 +12,13 @@ $purple:            #493252;
 $red:               #E25440;
 $slate:             #3D4260;
 
-$primary-color:     $red;
+$primary-color:     #8cc63f;
 $secondary-color:   #5BA4E5;
 
 $link-color:        $primary-color;
-$hover-color:       darken($link-color, 15%);
+$hover-color:       $primary-color;
 
-$sans-font:         'Raleway', sans-serif;
-$serif-font:        'Roboto Slab', serif;
+$sans-font:         'brandon-grotesque',sans-serif;
+$serif-font:        'Merriweather', serif;
 
 $border-radius:     3px;

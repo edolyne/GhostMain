@@ -12,17 +12,20 @@ html {
 }
 
 body {
-  font-family: $sans-font;
+  font-family: $serif-font;
+  letter-spacing:  0.25px;
   font-size: 1em;
   color: $gray-darker;
 }
 
 ::selection {
-  background: lighten($primary-color, 36%);
+  background: rgba(140,198,63,0.9);
+  color: white;
 }
 
 ::-moz-selection {
-  background: lighten($primary-color, 36%);
+  background: rgba(140,198,63,0.9);
+  color: white;
 }
 
 // ------------------------------
@@ -32,9 +35,10 @@ body {
 a {
   text-decoration: none;
   color: $link-color;
+  border-bottom: $link-color 1px dotted;
 
   &:hover {
-    color: $hover-color;
+    border-style: solid;
     -o-transition:.5s;
     -ms-transition:.5s;
     -moz-transition:.5s;
@@ -51,7 +55,8 @@ h5,
 h5 {
   margin-top: .8em;
   margin-bottom: .4em;
-  font-family: $serif-font;
+  font-family: $sans-font;
+  letter-spacing: 0px;
   font-weight: lighter;
   color: $gray-darkest;
   -webkit-font-smoothing: antialiased;
@@ -61,7 +66,8 @@ h1 {
   margin-top: 0;
   font-size: 3.2em;
   line-height: 1.2em;
-  letter-spacing: .05em;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 h2 {

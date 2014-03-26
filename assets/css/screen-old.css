@@ -925,25 +925,21 @@ html {
   max-height: 100%; }
 
 body {
-  font-family: "Merriweather", serif;
-  letter-spacing: 0.25px;
+  font-family: "Merriweather", serif, "rooney-web", serif;
   font-size: 1em;
   color: #666666; }
 
 ::selection {
-  background: rgba(140, 198, 63, 0.9);
-  color: white; }
+  background: #e1f0cd; }
 
 ::-moz-selection {
-  background: rgba(140, 198, 63, 0.9);
-  color: white; }
+  background: #e1f0cd; }
 
 a {
   text-decoration: none;
-  color: #8cc63f;
-  border-bottom: #8cc63f 1px dotted; }
+  color: #8cc63f; }
   a:hover {
-    border-style: solid;
+    color: #638e2a;
     -o-transition: .5s;
     -ms-transition: .5s;
     -moz-transition: .5s;
@@ -957,8 +953,7 @@ h5,
 h5 {
   margin-top: .8em;
   margin-bottom: .4em;
-  font-family: "brandon-grotesque", sans-serif;
-  letter-spacing: 0px;
+  font-family: "Roboto Slab", serif;
   font-weight: lighter;
   color: #333333;
   -webkit-font-smoothing: antialiased; }
@@ -967,8 +962,7 @@ h1 {
   margin-top: 0;
   font-size: 3.2em;
   line-height: 1.2em;
-  font-weight: 700;
-  text-transform: uppercase; }
+  letter-spacing: .05em; }
 
 h2 {
   font-size: 2.2em; }
@@ -1001,7 +995,7 @@ blockquote {
   background: #f8f8f8;
   border: 1px solid #eeeeee;
   border-radius: 3px;
-  font-family: "Merriweather", serif;
+  font-family: "Roboto Slab", serif;
   font-weight: lighter;
   font-style: italic;
   font-size: 1.3em;
@@ -1059,7 +1053,7 @@ pre {
   color: #999999; }
 
 .intro {
-  font-family: "Merriweather", serif;
+  font-family: "Roboto Slab", serif;
   font-size: 1.2em;
   font-weight: lighter;
   color: #999999; }
@@ -1116,7 +1110,7 @@ pre {
     color: #a6a6a6;
     text-decoration: underline; }
     .footer__copyright a:hover {
-      color: #8cc63f; }
+      color: #638e2a; }
 
 .avatar,
 .logo {
@@ -1184,7 +1178,7 @@ hr {
   color: #FFF; }
 
 .panel-subtitle {
-  font-family: "Merriweather", serif;
+  font-family: "Roboto Slab", serif;
   font-size: 1.2em;
   font-weight: lighter;
   letter-spacing: 3px;
@@ -1431,7 +1425,7 @@ i {
   .post-list__post-title a {
     color: #333333; }
     .post-list__post-title a:hover {
-      color: #8cc63f; }
+      color: #638e2a; }
 
 .post-list__meta {
   display: block;
