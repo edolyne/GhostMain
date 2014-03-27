@@ -59,5 +59,28 @@
     {{! The main JavaScript file for Casper }}
     <script type="text/javascript" src="{{asset "js/main.js"}}"></script>
 
+    <script>
+        if($('.post-container--single img').length>0){
+          /*if post has img with alt "cover-image" */
+          if($('.post-content img[alt="cover-image"]').length>0){
+              mainImage=$('img[alt="cover-image"]:first');//默认选择第一张 cover-image
+              mainImageSource = mainImage.attr('src');
+              $('.panel-cover.post').css('background-image','url('+mainImageSource+')');
+              mainImage.remove();
+          }else{
+              /*if there is no custome "cover-image"，using the first image of the article*/
+              $('.post-container--single img:first').attr('alt','cover-image');
+              mainImage=$('img[alt="cover-image"]');
+              mainImageSource = mainImage.attr('src');
+              $('.panel-cover.post').css('background-image','url('+mainImageSource+')');
+          }
+
+      }else{
+          /*if there is no img in the article ,using the default pic*/
+
+      }
+
+    </script>
+
 </body>
 </html>

@@ -20,13 +20,12 @@ nav {
       display: block;
       position: relative;
       @extend .btn;
-      border-color: #FFF;
+      border: none;
       color: #FFF;
       opacity: .8;
 
       &:hover {
-        color: #FFF;
-        border-color: #FFF;
+        color: $link-color;
         opacity: 1;
       }
 
@@ -35,7 +34,8 @@ nav {
   }
 
   .navigation--social {
-    margin-left: 1.5em;
+    display: block;
+    margin: 0 auto;
 
     a {
       padding: 6px 8px 6px 9px;

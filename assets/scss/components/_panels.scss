@@ -34,7 +34,7 @@
 // ------------------------------
 
 .panel-cover {
-  display: block;
+  display: table;
   position: fixed;
   z-index: 900;
   width: 100%;
@@ -42,11 +42,52 @@
   height: 100%;
   background: url(../images/background-cover.jpg) top left no-repeat $gray-darker;
   background-size: cover;
+
+  a {
+    border-bottom: none;
+
+    &:hover {
+      border-bottom: none;
+    }
+  }
+
+  &.post {
+    height: 100%;
+    position: relative;
+    background-attachment: fixed;
+
+    .panel-main {
+      height: 100%;
+      display: table;
+    }
+
+    .panel-main__content {
+      max-width: 100%;
+
+      * {
+        color: white;
+      }
+
+      a {
+        border-bottom: none;
+
+        &:hover {
+          border-bottom: none;
+        }
+      }
+    }
+  }
 }
 
   .panel-cover--collapsed {
-    width: 40%;
-    max-width: 530px;
+    width: 100%;
+    height: 50%;
+    position: relative;
+    background-attachment: fixed;
+
+    &.animate {
+      @include transition(all 0.25s linear);
+    }
   }
 
   .panel-cover--overlay {
@@ -57,8 +98,10 @@
     right: 0;
     bottom: 0;
     left: 0;
-    @include linear-gradient(140deg, rgba(#444444,.6) 20%, rgba(#000000,.9));
+    background: rgba(19,19,19,.7);
   }
+
+
 
   .panel-cover__logo {
     margin-bottom: .2em;
@@ -92,7 +135,7 @@
 
       .panel-main {
         width: 40%;
-        max-width: 530px;
+      //max-width: 530px;
       }
 
     }
@@ -136,30 +179,17 @@
   margin-top: 10px;
 }
 
-  .cover-navigation--social {
-    margin-left: 30px;
+  .cover-navigation {
+
+    &.navigation--social {
+      display: table;
+      margin: 2em auto 0;
+      text-align: center;
+    }
   }
 
-// ------------------------------
-// ADDITIONAL COVER COLOURS
-// ------------------------------
-
-.cover-green {
-  @include linear-gradient(140deg, rgba($green,.6) 20%, rgba(darken($green, 20%),.8));
-}
-
-.cover-purple {
-  @include linear-gradient(140deg, rgba($purple,.6) 20%, rgba(darken($purple, 20%),.8));
-}
-
-.cover-red {
-  @include linear-gradient(140deg, rgba(darken($red, 30%),.6) 20%, rgba(darken($red, 50%),.8));
-}
-
-.cover-slate {
-  @include linear-gradient(140deg, rgba($slate,.6) 20%, rgba(darken($slate, 20%),.8));
-}
-
-.cover-disabled {
-  background: none;
-}
+  .cover-navigation--primary {
+    font-family: $sans-font;
+    font-size: 1.25em;
+    font-weight: 300;
+  }
