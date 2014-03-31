@@ -3,8 +3,11 @@
 // ------------------------------
 
 .pagination {
+  //border-top: #ccc 1px solid;
   display: block;
   margin: 0 0 4em 0;
+  text-align: center;
+  padding-top: 2em;
 }
 
   .pagination__page-number {
@@ -15,8 +18,26 @@
 
   .pagination__newer {
     margin-right: 1em;
+    display: inline-block;
+    @include transition(all 0.15s linear);
+
+    &:hover {
+      background: $link-color;
+      border-color: $link-color;
+      color: white;
+      @include transition(all 0.15s linear);
+    }
   }
 
   .pagination__older {
     margin-left: 1em;
+    display: inline-block;
+    @include transition(all 0.15s linear);
+
+    &:hover {
+      background: $link-color;
+      border-color: $link-color;
+      color: white;
+      @include transition(all 0.15s linear);
+    }
   }

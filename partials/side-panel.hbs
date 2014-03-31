@@ -6,16 +6,59 @@
     <div class="panel-main__inner panel-inverted">
       <div class="panel-main__content">
         <h1 class="post-title">{{{title}}}</h1>
-        <p><img src="{{author.image}}" alt="profile image for {{author.name}}" class="avatar post-meta__avatar" /> {{author.name}}{{tags prefix=" in " separator=" , "}}</p>
-        <p class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">Published on {{date format='DD MMM YYYY'}}</time></p>
-        <span class="post-meta__author author"></span>
+        <p>{{tags prefix="on " separator=" , "}}</p>
+        <p class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">Published on {{date format='MMM DD, YYYY'}}</time></p>
+      </div>
+      <div class="navigation-wrapper post-nav">
+        <nav class="cover-navigation cover-navigation--primary">
+          <hr class="panel-cover__divider panel-cover__divider--secondary" />
+          <ul class="navigation">
+            <li class="navigation__item"><a href="/#blog" title="link to {{@blog.title}} blog" class="blog-button">Back to Blog</a></li>
+          </ul>
+        </nav>
       </div>
       </div>
     </div>
     {{/post}}
+    <section class="scroll-down">
+      <a href="#scroll" data-scroll>
+        <span class="iconic" data-glyph="chevron-bottom" title="Scroll Down" aria-hidden="true"></span>
+      </a>
+    </section>
     <div class="panel-cover--overlay"></div>
   </div>
 </header>
+
+{{else}}{{#if tag}}
+  
+  <header class="panel-cover tag-listing panel-cover--collapsed" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+    <div class="panel-main">
+
+      <div class="panel-main__inner panel-inverted">
+      <div class="panel-main__content">
+
+          <h1 class="tag-listing">{{tag.name}}</h1>
+          <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+          <div class="navigation-wrapper">
+
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="link to {{@blog.title}} blog" class="blog-button">Back to Blog</a></li>
+              </ul>
+            </nav>
+
+            {{> social}}
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="panel-cover--overlay"></div>
+    </div>
+  </header>
 
 {{else}}
 <header class="panel-cover" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
@@ -52,4 +95,4 @@
     <div class="panel-cover--overlay"></div>
   </div>
 </header>
-{{/if}}
+{{/if}}{{/if}}

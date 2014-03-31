@@ -30,12 +30,27 @@
 
   .post-meta__avatar {
     display: inline-block;
-    width: 22px;
-    height: 22px;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
     margin: 0 .3em -.4em 0;
     border: none;
     @include box-shadow(none);
   }
+
+.panel-cover {
+
+  &.post {
+
+    img {
+
+      &.post-meta__avatar {
+        display: inline-block;
+        margin-right: 0.5em;
+      }
+    }
+  }
+}
 
 // ------------------------------
 // SINGLE POST STYLES
@@ -44,9 +59,10 @@
 .post {
 
   img {
+    display: block;
     max-width: 100%;
     margin: 0 auto;
-    border-radius: $border-radius;
+    //border-radius: $border-radius;
     text-align: center;
   }
 
@@ -61,4 +77,11 @@
     border-top: 1px solid $gray-light;
   }
 
+}
+
+.post-container {
+
+  img {
+    width: 100%;
+  }
 }

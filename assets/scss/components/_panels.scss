@@ -42,12 +42,19 @@
   height: 100%;
   background: url(../images/background-cover.jpg) top left no-repeat $gray-darker;
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  h1 {
+    color: white;
+  }
 
   a {
     border-bottom: none;
 
     &:hover {
       border-bottom: none;
+      color: $primary-color !important;
     }
   }
 
@@ -59,6 +66,21 @@
     .panel-main {
       height: 100%;
       display: table;
+
+      .post-nav {
+        text-align: center;
+        margin-top: 2em;
+
+        hr {
+
+          &.panel-cover__divider {
+
+            &.panel-cover__divider--secondary {
+              display: inline-block;
+            }
+          }
+        }
+      }
     }
 
     .panel-main__content {
@@ -74,6 +96,29 @@
         &:hover {
           border-bottom: none;
         }
+      }
+    }
+  }
+
+  .scroll-down {
+    position: absolute;
+    bottom: 1em;
+    text-align: center;
+    width: 100%;
+    color: white;
+    z-index: 999;
+
+    .iconic[data-glyph]:empty:before {
+      font-size: 1.5em;
+      width: 1.5em;
+      @include transition(all 0.25s linear);
+    }
+
+    &:hover {
+
+      .iconic[data-glyph]:empty:before {
+        @include transform(scale(1.1));
+        @include transition(all 0.25s linear);
       }
     }
   }

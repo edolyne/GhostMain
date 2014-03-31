@@ -28,6 +28,63 @@ body {
   color: white;
 }
 
+#imagelightbox
+{
+    position: fixed;
+    z-index: 9999;
+}
+
+// Fonts
+
+/* Import the font file with the icons in it */
+@font-face {
+    font-family: 'icons';
+    src:url('../fonts/ghost/icons.eot');
+    src:url('../fonts/ghost/icons.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ghost/icons.woff') format('woff'),
+        url('../fonts/ghost/icons.ttf') format('truetype'),
+        url('../fonts/ghost/icons.svg#icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply these base styles to all icons */
+.icon-ghost:before,
+.icon-feed:before,
+.icon-twitter:before,
+.icon-google-plus:before,
+.icon-facebook:before {
+    font-family: 'icons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Each icon is created by inserting the corret character into the
+   content of the :before pseudo element. Like a boss. */
+.icon-ghost:before {
+    content: "\e000";
+}
+.icon-feed:before {
+    content: "\e001";
+}
+.icon-twitter:before {
+    content: "\e002";
+    font-size: 1.1em;
+}
+.icon-google-plus:before {
+    content: "\e003";
+}
+.icon-facebook:before {
+    content: "\e004";
+}
+
 // ------------------------------
 // TYPOGRAPHY
 // ------------------------------
@@ -244,17 +301,77 @@ pre {
     padding: 50px 0;
   }
 
+.post-footer {
+  border-top: 1px solid #dddddd;
+  padding: 2em 0;
+  display: block;
+  margin: 2em auto;
+
+  .author {
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 4%;
+    width: 70%;
+    box-sizing: border-box;
+
+    h4 {
+      font-size: 1.75em;
+      color: #666666;
+    }
+
+    p {
+      color: #666666;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      color: #666666;
+    }
+  }
+
+  .share {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+
+    a {
+      font-size: 1.25em;
+      margin: 0.5em 0.5em 0 0;
+      border-bottom: none;
+      display: inline-block;
+      color: #666666;
+
+      &:hover {
+        color: $link-color;
+      }
+    }
+  }
+}
+
 .footer {
   display: block;
-  padding: 2em 0 0 0;
-  border-top: 2px solid $gray-light;
+  padding: 1em 0;
+  //border-top: 2px solid $gray-light;
   font-size: .7em;
   color: lighten($gray-dark, 10%);
+  background: #191919;
+
+  .content-wrapper__inner {
+    padding: 0;
+  }
+
+  * {
+    color: white;
+  }
 }
 
   .footer__copyright {
-    display: block;
-    margin-bottom: .7em;
+    display: inline-block;
+    vertical-align: middle;
+    //margin-bottom: .7em;
+    padding: 1em inherit;
+    width: 33%;
 
     a {
       color: lighten($gray-dark, 5%);
@@ -266,6 +383,36 @@ pre {
 
     }
 
+  }
+
+  .footer__hosting {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: right;
+    padding: 1em inherit;
+    width: 33%;
+  }
+
+  .footer__NewSpring {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: none;
+    width: 34%;
+
+    .iconic[data-glyph]:empty:before {
+      font-size: 0.95em;
+      padding: 0 0.25em;
+    }
+
+    &:hover {
+      border-bottom: none;
+
+      * {
+        color: $primary-color;
+      }
+    }
   }
 
 // ------------------------------

@@ -20,14 +20,15 @@
     }
 
   }
-
 }
 
   .post-list__post-title {
     margin-top: 0;
-    margin-bottom: .2em;
-    font-size: 1.5em;
+    margin-bottom: 1em;
+    font-size: 1.75em;
     line-height: 1.3em;
+    font-weight: 500;
+    text-transform: uppercase;
 
     a {
       color: $gray-darkest;
@@ -58,6 +59,6 @@
 
   .post-list__divider {
     width: 30%;
-    margin: 2.2em 0 2.1em 0;
+    margin: 4em auto;
     border-top: 1px solid $gray-light;
   }
